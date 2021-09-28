@@ -12,12 +12,13 @@ int main(int argc, char* argv[]) {
     if (argc < 2) {
         cout << argv[0] << " Version " << Tutorial_VERSION_MAJOR << "." << Tutorial_VERSION_MINOR << endl;
         cout << "Usage: " << argv[0] << " number" << endl;
+        return 1;
     }
-    auto x = 3;
+    auto x = stod(argv[1]);
 #ifdef USE_MYMATH
-    cout << "mysqrt(" << x << ") = " << mysqrt(x) << endl;
+    cout << x << " is " << mysqrt(x) << endl;
 #else
-    cout << "sqrt(" << x << ") = " << sqrt(x) << endl;
+    cout << x << " is " << sqrt(x) << endl;
 #endif
     return 0;
 }
